@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/book")
 public class BookController {
+
     @Autowired
     BookService service;
 
     @PostMapping
-    public void addBook(@RequestBody  Book book){
+    public void addBook(@RequestBody Book book){
         service.addBook(book);
     }
 }
