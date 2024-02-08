@@ -23,5 +23,4 @@ public class BookEntity {
     private String category;
     private Integer qty;
 
-
 }
