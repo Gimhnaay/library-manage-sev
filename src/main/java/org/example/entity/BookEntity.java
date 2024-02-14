@@ -15,12 +15,10 @@ import lombok.NoArgsConstructor;
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
     private String isbn;
     private String title;
     private String author;
     private String category;
     private Integer qty;
-
 }

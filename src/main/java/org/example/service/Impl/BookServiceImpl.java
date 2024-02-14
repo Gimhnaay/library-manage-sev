@@ -18,10 +18,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
 
-
     final BookRepository repository;
     ModelMapper mapper;
-
     @Bean
     public void setup(){
        this.mapper= new ModelMapper();
@@ -31,12 +29,10 @@ public class BookServiceImpl implements BookService {
         BookEntity entity= mapper.map(book, BookEntity.class);
         repository.save(entity);
     }
-
     @Override
     public List<BookEntity> getBooks() {
         return   repository.findAll();
     }
-
     @Override
     public boolean deleteBook(Long id) {
         if(repository.existsById(id)){
@@ -46,7 +42,6 @@ public class BookServiceImpl implements BookService {
             return false;
         }
     }
-
     @Override
     public Book getBookId(Long id) {
          Optional<BookEntity> byId=repository.findById(id);
